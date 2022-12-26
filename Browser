@@ -1,0 +1,20 @@
+package selenium.Learn;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Browser {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "D:\\selenium\\chromedriver_win32 (1)\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://letcode.in/");
+		driver.findElement(By.linkText("Log in")).click();
+		driver.findElement(By.name("email")).sendKeys("durairajperiayannan1997@gmail/com");
+		driver.findElement(By.name("password")).sendKeys("password");
+		driver.findElement(By.xpath("//*[@id=\"navbar-menu\"]/div[2]/div/div/a[1]")).click();
+        driver.quit();
+	}
+
+}
