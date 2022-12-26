@@ -1,0 +1,32 @@
+package selenium.Learn;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TextBoxDemo {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "D:\\selenium\\chromedriver_win32 (1)\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.leafground.com/input.xhtml");
+		//enter the name
+		driver.findElement(By.xpath("//input[@id='j_idt88:name']")).sendKeys("Durairaj P");
+		//append the value
+		driver.findElement(By.xpath("//input[@id='j_idt88:j_idt91']")).sendKeys(" in india");
+		//disabled
+		boolean isEnable=driver.findElement(By.xpath("//input[@id='j_idt88:j_idt93']")).isEnabled();
+		System.out.println(isEnable);
+		//clear text
+		driver.findElement(By.xpath("//input[@id='j_idt88:j_idt95']")).clear();
+		//retrive the text
+		driver.findElement(By.xpath("//input[@id='j_idt88:j_idt97']")).getAttribute("value");
+		//email and tab ky
+		driver.findElement(By.xpath("//input[@id='j_idt88:j_idt99']")).sendKeys("durairajperiyannan1997@gmail.com"+Keys.TAB);
+		//quit
+		driver.quit();
+
+	}
+
+}
